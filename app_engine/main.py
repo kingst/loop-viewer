@@ -41,11 +41,11 @@ class DeviceStatus(webapp2.RequestHandler):
         request_data = json.loads(self.request.body)
 
         response = []
-        for treatment in request_data:
+        for status in request_data:
             uuid = _create_uuid()
-            t = Treatment(id=uuid)
-            t.raw_data = treatment
-            t.put()
+            d = DeviceStatus(id=uuid)
+            d.raw_data = status
+            d.put()
             response.append({'_id': uuid})
 
         logging.info(json.dumps(request_data, indent=4))
