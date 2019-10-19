@@ -3,6 +3,7 @@ import logging
 import os
 import webapp2
 
+from models import DeviceStatus
 from models import Treatment
 
 def _create_uuid():
@@ -38,10 +39,18 @@ class Treatments(webapp2.RequestHandler):
 class DeviceStatus(webapp2.RequestHandler):
     def post(self):
         request_data = json.loads(self.request.body)
-        logging.info('request_data length = {0}'.format(len(request_data)))
+
+        response = []
+        for treatment in request_data:
+            uuid = _create_uuid()
+            t = Treatment(id=uuid)
+            t.raw_data = treatment
+            t.put()
+            response.append({'_id': uuid})
+
         logging.info(json.dumps(request_data, indent=4))
         self.response.headers['Content-Type'] = 'application/json'
-        self.response.out.write(json.dumps({'status': 'success'}))
+        self.response.out.write(json.dumps(response))
 
 
 app = webapp2.WSGIApplication(
