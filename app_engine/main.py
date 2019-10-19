@@ -19,7 +19,7 @@ class ExperimentsTest(webapp2.RequestHandler):
         self.response.out.write(json.dumps({'status': 'success'}))
 
 
-class Treatments(webapp2.RequestHandler):
+class TreatmentHandler(webapp2.RequestHandler):
     def post(self):
         request_data = json.loads(self.request.body)
         
@@ -36,7 +36,7 @@ class Treatments(webapp2.RequestHandler):
         self.response.out.write(json.dumps(response))
 
 
-class DeviceStatus(webapp2.RequestHandler):
+class DeviceStatusHandler(webapp2.RequestHandler):
     def post(self):
         request_data = json.loads(self.request.body)
 
@@ -55,8 +55,8 @@ class DeviceStatus(webapp2.RequestHandler):
 
 app = webapp2.WSGIApplication(
     [(r'/api/v1/experiments/test', ExperimentsTest),
-     (r'/api/v1/treatments', Treatments),
-     (r'/api/v1/devicestatus', DeviceStatus)],
+     (r'/api/v1/treatments', TreatmentHandler),
+     (r'/api/v1/devicestatus', DeviceStatusHandler)],
     debug=True)
 
 
