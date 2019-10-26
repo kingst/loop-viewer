@@ -6,6 +6,9 @@ import webapp2
 from models import DeviceStatus
 from models import Treatment
 
+from google.appengine.ext import ndb
+
+
 def _create_uuid():
     uuid = os.urandom(24).encode('base64').replace("\n","")
     uuid = uuid.replace("/", "_").replace("+","-")
@@ -24,13 +27,15 @@ class TreatmentHandler(webapp2.RequestHandler):
         request_data = json.loads(self.request.body)
         
         response = []
+        bulk_put_list = []
         for treatment in request_data:
             uuid = _create_uuid()
             t = Treatment(id=uuid)
             t.raw_data = treatment
-            t.put()
+            bulk_put_list.append(t)
             response.append({'_id': uuid})
 
+        ndb.put_multi(bulk_put_list)
         logging.info(json.dumps(request_data, indent=4))
         self.response.headers['Content-Type'] = 'application/json'
         self.response.out.write(json.dumps(response))
