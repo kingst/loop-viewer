@@ -6,6 +6,7 @@ struct User {
     var e164PhoneNumber: String
     var name: String?
     var email: String?
+    var loopDevice: LoopDevice?
     
     static var currentUser: User? = nil
     
@@ -31,8 +32,6 @@ struct User {
     static func logout() {
         // XXX FIXME we should fire and forget a logout api call
         Storage.authToken = nil
-        //Storage.e164PhoneNumber = nil
-        //Storage.clearNameDictionary()
         User.currentUser = nil
     }
 }

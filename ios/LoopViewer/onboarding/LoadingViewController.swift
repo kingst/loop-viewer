@@ -19,6 +19,14 @@ class LoadingViewController: UIViewController {
             }
             
             User.currentUser = User(response["user"] as! [String: Any])
+            Onboarding.next().map { vc in
+                let storyboard = UIStoryboard(name: "PhoneVerification", bundle: nil)
+                let navController = storyboard.instantiateViewController(withIdentifier: "onboardNavigationController") as! UINavigationController
+                navController.viewControllers = [vc]
+                navController.navigationBar.shadowImage = UIImage()
+                let appDelegate = UIApplication.shared.delegate as? AppDelegate
+                appDelegate?.window?.rootViewController = navController
+            }
         }
     }
 }

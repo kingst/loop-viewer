@@ -10,43 +10,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func setHomeViewController() {
         let storyboard = UIStoryboard(name: "Home", bundle: nil)
         let navController = storyboard.instantiateViewController(withIdentifier: "homeNav") as! UINavigationController
-        let vc = storyboard.instantiateViewController(withIdentifier: "wallet")
+        let vc = storyboard.instantiateViewController(withIdentifier: "overview")
         navController.viewControllers = [vc]
         self.window?.rootViewController = navController
         self.window?.makeKeyAndVisible()
     }
     
-    func setProductionKeys() {
-        guard let credsPath = Bundle.main.path(forResource: "creds", ofType: "json") else {
-            print("could not find creds file")
-            return
-        }
-        
-        guard let credsData = FileManager.default.contents(atPath: credsPath) else {
-            print("could not read the creds data")
-            return
-        }
-        
-        guard let jsonData = try? JSONSerialization.jsonObject(with: credsData) else {
-            print("could not parse the json data")
-            return
-        }
-        guard let _ = jsonData as? [String: Any] else {
-            return
-        }
-    }
-
-    @objc func storeDidChange() {
-        print("storeDidChange")
-    }
-    
-    func startICloud() {
-        NotificationCenter.default.addObserver(self, selector: #selector(storeDidChange), name: NSUbiquitousKeyValueStore.didChangeExternallyNotification, object: NSUbiquitousKeyValueStore.default)
-        NSUbiquitousKeyValueStore.default.synchronize()
-    }
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        self.startICloud()
         ScanViewController.configure()
         
         if Storage.authToken != nil {

@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iOc-ce-2yb">
-    <device id="retina6_5" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iOc-ce-2yb">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,22 +11,26 @@
         <!--Loading View Controller-->
         <scene sceneID="vM0-Eo-1Sm">
             <objects>
-                <viewController storyboardIdentifier="loadingController" id="GaR-r1-gqs" customClass="LoadingViewController" customModule="Cloud9Wallet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loadingController" id="GaR-r1-gqs" customClass="LoadingViewController" customModule="LoopViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="t83-8x-dQL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="QmP-2X-gVX">
-                                <rect key="frame" x="188.66666666666666" y="429.66666666666669" width="37" height="37"/>
+                                <rect key="frame" x="183" y="424" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="EvM-Id-y0q"/>
+                                    <constraint firstAttribute="height" constant="48" id="bfm-MU-dyb"/>
+                                </constraints>
                             </activityIndicatorView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Growth Metrics Wallet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="EKa-Zj-yT5">
-                                <rect key="frame" x="16" y="358.66666666666669" width="382" height="43"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Betes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="EKa-Zj-yT5">
+                                <rect key="frame" x="16" y="353" width="382" height="43"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Strong security for crypto accounts" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2k-Fe-BAH">
-                                <rect key="frame" x="16" y="489.66666666666674" width="382" height="67"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remote monitoring for the Loop diabetes management system" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2k-Fe-BAH">
+                                <rect key="frame" x="16" y="495" width="382" height="67"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="67" id="LDB-Pz-Glb"/>
                                 </constraints>
@@ -58,7 +60,7 @@
         <!-- -->
         <scene sceneID="HUb-8q-ZKj">
             <objects>
-                <viewController storyboardIdentifier="enterPhoneNumber" id="QPh-1L-ubg" customClass="EnterPhoneNumberViewController" customModule="Cloud9Wallet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="enterPhoneNumber" id="QPh-1L-ubg" customClass="EnterPhoneNumberViewController" customModule="LoopViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xrS-gz-Krr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -95,7 +97,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="utn-J6-gJg"/>
                                 </constraints>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="yes" keyboardType="numberPad" smartInsertDeleteType="yes" textContentType="tel"/>
                             </textField>
@@ -219,7 +220,7 @@
         <!-- -->
         <scene sceneID="czj-14-NNX">
             <objects>
-                <viewController storyboardIdentifier="verifyCode" id="sSF-Mt-rCZ" customClass="VerifyCodeViewController" customModule="Cloud9Wallet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="verifyCode" id="sSF-Mt-rCZ" customClass="VerifyCodeViewController" customModule="LoopViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iOn-PX-uaR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -258,7 +259,6 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="5v6-q1-tpI"/>
                                 </constraints>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
@@ -353,7 +353,7 @@
         <!-- -->
         <scene sceneID="r47-g2-ard">
             <objects>
-                <viewController storyboardIdentifier="enterName" id="enT-w3-eam" customClass="EnterNameViewController" customModule="Cloud9Wallet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="enterName" id="enT-w3-eam" customClass="EnterNameViewController" customModule="LoopViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YYV-FE-6Ua">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -380,7 +380,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Q2L-N0-pNZ"/>
                                 </constraints>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="next" textContentType="name"/>
                             </textField>
@@ -466,13 +465,13 @@
         <!--Pick Country View Controller-->
         <scene sceneID="ZcS-zQ-AOz">
             <objects>
-                <viewController storyboardIdentifier="pickCountry" id="Mco-fk-Uxe" customClass="PickCountryViewController" customModule="Cloud9Wallet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="pickCountry" id="Mco-fk-Uxe" customClass="PickCountryViewController" customModule="LoopViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Uq7-0F-PQT">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="snI-bU-JrE">
-                                <rect key="frame" x="16" y="44" width="32" height="40"/>
+                                <rect key="frame" x="16" y="0.0" width="32" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="8h7-UN-gTF"/>
                                     <constraint firstAttribute="height" constant="40" id="lLP-FE-tHr"/>
@@ -484,7 +483,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bKB-Q0-cTh">
-                                <rect key="frame" x="16" y="92" width="382" height="750"/>
+                                <rect key="frame" x="16" y="48" width="382" height="740"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Mco-fk-Uxe" id="lEd-t1-URg"/>
@@ -531,7 +530,7 @@
         <!-- -->
         <scene sceneID="sd2-Yy-p7W">
             <objects>
-                <viewController storyboardIdentifier="enterEmail" id="9mb-2m-NGL" customClass="EnterEmailViewController" customModule="Cloud9Wallet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="enterEmail" id="9mb-2m-NGL" customClass="EnterEmailViewController" customModule="LoopViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dmt-jL-7LA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -558,7 +557,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="lUY-D6-8Ep"/>
                                 </constraints>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
                             </textField>
@@ -643,7 +641,7 @@
         <!-- -->
         <scene sceneID="1zN-Gv-931">
             <objects>
-                <viewController storyboardIdentifier="verifyCard" id="vwv-n8-3NA" customClass="VerifyCardViewController" customModule="Cloud9Wallet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="verifyCard" id="vwv-n8-3NA" customClass="VerifyCardViewController" customModule="LoopViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pvt-wc-w1N">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -755,7 +753,7 @@
     </scenes>
     <resources>
         <image name="US" width="21" height="15"/>
-        <image name="baseline_arrow_drop_down_black_18pt" width="54" height="54"/>
-        <image name="baseline_cancel_black_18pt" width="54" height="54"/>
+        <image name="baseline_arrow_drop_down_black_18pt" width="18" height="18"/>
+        <image name="baseline_cancel_black_18pt" width="18" height="18"/>
     </resources>
 </document>

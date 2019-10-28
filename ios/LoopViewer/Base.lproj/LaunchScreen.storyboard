@@ -16,21 +16,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_credit_card_white_48pt" translatesAutoresizingMaskIntoConstraints="NO" id="xLW-j5-UPr">
-                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baseline_timeline_white_48pt" translatesAutoresizingMaskIntoConstraints="NO" id="xLW-j5-UPr">
+                                <rect key="frame" x="163.5" y="309.5" width="48" height="48"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="37" id="Ff2-k7-xvR"/>
-                                    <constraint firstAttribute="height" constant="37" id="vPG-ad-V2Y"/>
+                                    <constraint firstAttribute="width" constant="48" id="Ff2-k7-xvR"/>
+                                    <constraint firstAttribute="height" constant="48" id="vPG-ad-V2Y"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loop Viewer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="oiJ-sP-Hiw">
-                                <rect key="frame" x="16" y="244" width="343" height="43"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Betes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="oiJ-sP-Hiw">
+                                <rect key="frame" x="16" y="238.5" width="343" height="43"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monitoring for the Loop diabetes management system" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CbW-al-PP8">
-                                <rect key="frame" x="16" y="375" width="343" height="67"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remote monitoring for the Loop diabetes management system" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CbW-al-PP8">
+                                <rect key="frame" x="16" y="380.5" width="343" height="67"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="67" id="9Th-UM-lsD"/>
                                 </constraints>
@@ -59,6 +60,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_credit_card_white_48pt" width="48" height="48"/>
+        <image name="baseline_timeline_white_48pt" width="48" height="48"/>
     </resources>
 </document>

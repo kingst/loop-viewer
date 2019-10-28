@@ -33,7 +33,8 @@
 		3B4A93802364CBA8007DE008 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4A93612364CBA8007DE008 /* User.swift */; };
 		3B4A93862364CBA8007DE008 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B4A93682364CBA8007DE008 /* Home.storyboard */; };
 		3B4A93872364CBA8007DE008 /* IdentityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4A93692364CBA8007DE008 /* IdentityViewController.swift */; };
-		3B4A93882364CBA8007DE008 /* AccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4A936A2364CBA8007DE008 /* AccountsViewController.swift */; };
+		3B4A93882364CBA8007DE008 /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4A936A2364CBA8007DE008 /* OverviewViewController.swift */; };
+		3BDCF9DD2366F7F800DF4996 /* LoopDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDCF9DC2366F7F800DF4996 /* LoopDevice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,7 +65,8 @@
 		3B4A93612364CBA8007DE008 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3B4A93682364CBA8007DE008 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		3B4A93692364CBA8007DE008 /* IdentityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentityViewController.swift; sourceTree = "<group>"; };
-		3B4A936A2364CBA8007DE008 /* AccountsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsViewController.swift; sourceTree = "<group>"; };
+		3B4A936A2364CBA8007DE008 /* OverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
+		3BDCF9DC2366F7F800DF4996 /* LoopDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopDevice.swift; sourceTree = "<group>"; };
 		9075DF1C762922DCB08DAAB6 /* Pods-LoopViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoopViewer.debug.xcconfig"; path = "Target Support Files/Pods-LoopViewer/Pods-LoopViewer.debug.xcconfig"; sourceTree = "<group>"; };
 		BF730157C6729D711A5008CD /* Pods_LoopViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoopViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3FC8C739547D03A0196331C /* Pods-LoopViewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoopViewer.release.xcconfig"; path = "Target Support Files/Pods-LoopViewer/Pods-LoopViewer.release.xcconfig"; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 			children = (
 				3B4A93602364CBA8007DE008 /* Storage.swift */,
 				3B4A93612364CBA8007DE008 /* User.swift */,
+				3BDCF9DC2366F7F800DF4996 /* LoopDevice.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -169,7 +172,7 @@
 			children = (
 				3B4A93682364CBA8007DE008 /* Home.storyboard */,
 				3B4A93692364CBA8007DE008 /* IdentityViewController.swift */,
-				3B4A936A2364CBA8007DE008 /* AccountsViewController.swift */,
+				3B4A936A2364CBA8007DE008 /* OverviewViewController.swift */,
 			);
 			path = accounts;
 			sourceTree = "<group>";
@@ -327,8 +330,9 @@
 				3B4A93762364CBA8007DE008 /* Onboarding.swift in Sources */,
 				3B4A936B2364CBA8007DE008 /* Api.swift in Sources */,
 				3B4A93732364CBA8007DE008 /* EnterNameViewController.swift in Sources */,
+				3BDCF9DD2366F7F800DF4996 /* LoopDevice.swift in Sources */,
 				3B4A93802364CBA8007DE008 /* User.swift in Sources */,
-				3B4A93882364CBA8007DE008 /* AccountsViewController.swift in Sources */,
+				3B4A93882364CBA8007DE008 /* OverviewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
