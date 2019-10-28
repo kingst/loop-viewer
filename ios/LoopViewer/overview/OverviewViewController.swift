@@ -42,5 +42,11 @@ class OverviewViewController: UIViewController {
             
             return
         }
+        
+        self.lastReadingLabel.text = loopDevice.lastUpdate()
+        self.currentGlucoseLabel.text = loopDevice.currentBG()
+        self.predictedLabel.text = loopDevice.predictedBG()
+        self.carbsOnBoardLabel.text = loopDevice.cob()
+        self.insulinOnBoardLabel.text = loopDevice.iob()
     }
 }
