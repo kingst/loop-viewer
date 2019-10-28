@@ -1,1 +1,5 @@
 *.pyc
+creds.py
+lib/
+AppleAuthKey.p8
+AppleAuthKey.pem
