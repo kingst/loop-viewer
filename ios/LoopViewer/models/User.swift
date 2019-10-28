@@ -2,8 +2,9 @@ import Foundation
 import libPhoneNumber_iOS
 
 struct User {
-    var userId: String
-    var e164PhoneNumber: String
+    let userId: String
+    let e164PhoneNumber: String
+    let apiSecret: String
     var name: String?
     var email: String?
     var loopDevice: LoopDevice?
@@ -13,6 +14,7 @@ struct User {
     init(_ params: [String: Any]) {
         self.userId = params["user_id"] as! String
         self.e164PhoneNumber = params["e164_phone_number"] as! String
+        self.apiSecret = params["loop_api_secret"] as! String
         self.name = params["name"] as? String
         self.email = params["email"] as? String
     }
