@@ -24,7 +24,6 @@ class SendToViewController: UIViewController, ScanDelegate, UITextFieldDelegate 
         }
         
         let currency = "self.account!.currency"
-        let amount = self.amount!
         let amountString = "self.account!.format(double: amount)"
         self.amountLabel.text = "Send \(amountString) \(currency)"
         self.toAddressField.delegate = self

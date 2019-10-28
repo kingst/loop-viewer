@@ -23,13 +23,7 @@ class SendAmountViewController: UIViewController, UITextFieldDelegate {
             self.errorLabel.isHidden = false
             return
         }
-        
-        guard let amount = Double(amountText) else {
-            self.errorLabel.text = "Could not understand the amount you entered"
-            self.errorLabel.isHidden = false
-            return
-        }
-        
+    
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

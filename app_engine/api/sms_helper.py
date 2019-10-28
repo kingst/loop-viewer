@@ -147,8 +147,8 @@ def send_sms(phone_number, message=""):
     return {'e164_phone_number': phone_data.e164_number()}
 
 
-def verify_short_code_login(phone_number, code, challenge_response, build):
-    (new_user, user, auth_token) = _verify_code(phone_number, code, challenge_response, build)
+def verify_short_code_login(phone_number, code):
+    (new_user, user, auth_token) = _verify_code(phone_number, code)
     if user is None:
         raise BTError(error.INCORRECT_CODE)
 
@@ -170,7 +170,7 @@ def _reset_rate_limits(phone_verification):
 
 
 @ndb.transactional(xg=True)
-def _verify_code(phone_number, code, challenge_response, build):
+def _verify_code(phone_number, code):
     phone_data = phone.lookup(phone_number)
     # it's a little strange that we use incorrect code if we test
     # a code for a user that doesn't exist, but whatever, clients
@@ -195,18 +195,6 @@ def _verify_code(phone_number, code, challenge_response, build):
         phone_data.put()
         # it's important to return here so that we persist the model update
         return (None, None, None)
-
-    # this is where we do login / signup challenges because we can
-    # avoid giving up the auth token or updating any state around sms
-    # verification by throwing an exception and unravelling the
-    # transaction
-    #if challenge_response is None and not phone_number in TEST_NUMBERS and build >= '2001':
-    #    err = BTError(error.CHALLENGE_NEEDED)
-    #    if random.random() < 0.5:
-    #        err.error_payload = 'scan_card'
-    #    else:
-    #        err.error_payload = 'stripe'
-    #    raise err
 
     # If we get here, the code is correct, cleanup the data
     _reset_rate_limits(phone_data.short_code)

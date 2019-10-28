@@ -18,7 +18,6 @@
 		3B4A936F2364CBA8007DE008 /* SendAmountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4A934D2364CBA7007DE008 /* SendAmountViewController.swift */; };
 		3B4A93702364CBA8007DE008 /* ConfirmSendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4A934E2364CBA7007DE008 /* ConfirmSendViewController.swift */; };
 		3B4A93712364CBA8007DE008 /* AccountDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4A934F2364CBA7007DE008 /* AccountDetailsViewController.swift */; };
-		3B4A93722364CBA8007DE008 /* DeviceSecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4A93502364CBA7007DE008 /* DeviceSecurity.swift */; };
 		3B4A93732364CBA8007DE008 /* EnterNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4A93522364CBA8007DE008 /* EnterNameViewController.swift */; };
 		3B4A93752364CBA8007DE008 /* PhoneVerification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B4A93542364CBA8007DE008 /* PhoneVerification.storyboard */; };
 		3B4A93762364CBA8007DE008 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4A93552364CBA8007DE008 /* Onboarding.swift */; };
@@ -50,7 +49,6 @@
 		3B4A934D2364CBA7007DE008 /* SendAmountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendAmountViewController.swift; sourceTree = "<group>"; };
 		3B4A934E2364CBA7007DE008 /* ConfirmSendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmSendViewController.swift; sourceTree = "<group>"; };
 		3B4A934F2364CBA7007DE008 /* AccountDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountDetailsViewController.swift; sourceTree = "<group>"; };
-		3B4A93502364CBA7007DE008 /* DeviceSecurity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceSecurity.swift; sourceTree = "<group>"; };
 		3B4A93522364CBA8007DE008 /* EnterNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterNameViewController.swift; sourceTree = "<group>"; };
 		3B4A93542364CBA8007DE008 /* PhoneVerification.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PhoneVerification.storyboard; sourceTree = "<group>"; };
 		3B4A93552364CBA8007DE008 /* Onboarding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
@@ -108,7 +106,6 @@
 				3B4A93492364CBA7007DE008 /* account_details */,
 				3B4A93652364CBA8007DE008 /* accounts */,
 				3B4A93482364CBA7007DE008 /* Api.swift */,
-				3B4A93502364CBA7007DE008 /* DeviceSecurity.swift */,
 				3B4A935E2364CBA8007DE008 /* KeyboardViewController.swift */,
 				3B4A935F2364CBA8007DE008 /* models */,
 				3B4A93512364CBA8007DE008 /* onboarding */,
@@ -328,7 +325,6 @@
 				3B4A936F2364CBA8007DE008 /* SendAmountViewController.swift in Sources */,
 				3B4A936E2364CBA8007DE008 /* SendToViewController.swift in Sources */,
 				3B4A93762364CBA8007DE008 /* Onboarding.swift in Sources */,
-				3B4A93722364CBA8007DE008 /* DeviceSecurity.swift in Sources */,
 				3B4A936B2364CBA8007DE008 /* Api.swift in Sources */,
 				3B4A93732364CBA8007DE008 /* EnterNameViewController.swift in Sources */,
 				3B4A93802364CBA8007DE008 /* User.swift in Sources */,

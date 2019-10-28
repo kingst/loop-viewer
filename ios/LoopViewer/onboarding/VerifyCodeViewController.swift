@@ -3,7 +3,6 @@ import UIKit
 class VerifyCodeViewController: UIViewController, UITextFieldDelegate {
     var e164PhoneNumber: String?
     let kNumDigitsInVerificationCode = 6
-    var challengeResponse: String?
     
     @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet weak var nextButton: UIButton!
@@ -41,7 +40,7 @@ class VerifyCodeViewController: UIViewController, UITextFieldDelegate {
         self.activityIndicator.isHidden = false
         self.nextButton.setTitle("", for: .normal)
         self.nextButton.isEnabled = false
-        Api.verifyCode(e164PhoneNumber: phoneNumber, code: code, challengeResponse: self.challengeResponse) { response, error in
+        Api.verifyCode(e164PhoneNumber: phoneNumber, code: code) { response, error in
             self.nextButton.isEnabled = true
             self.activityIndicator.isHidden = true
             self.nextButton.setTitle("Next", for: .normal)

@@ -12,24 +12,6 @@ from models import AnalyticsEvent
 from google.appengine.ext import ndb
 
 
-def check_challenge_response(user, request_data):
-    if user.challenge is None:
-        return
-
-    challenge_response = request_data.get('challenge_response', None)
-    if challenge_response is None:
-        challenge_error = BTError(error.CHALLENGE_NEEDED)
-        challenge_error.error_payload = user.challenge
-        return challenge_error
-                
-    # XXX FIXME we need to add logic here to check the challenge response
-    # to see if the user passed, but if they do this is how we'd clear it
-    user.challenge = None
-    user.put()
-
-    return None
-
-
 def api_call(required_args, auth_required=True):
     """Decorator for API calls.
 
@@ -125,11 +107,6 @@ def api_call(required_args, auth_required=True):
                     self.response.write(bte.to_result())
                     return
                 self.request.user = session.user.get()
-                cre = check_challenge_response(self.request.user,
-                                               self.request.request_data)
-                if not cre is None:
-                    self.response.write(cre.to_result())
-                    return
 
             try:
                 context = function(self, *args, **kwargs)

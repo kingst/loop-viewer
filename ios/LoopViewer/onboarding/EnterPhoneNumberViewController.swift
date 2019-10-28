@@ -107,7 +107,7 @@ class EnterPhoneNumberViewController: UIViewController, UITextFieldDelegate, Upd
         self.phoneNumberPrefix = "+\(countryPrefix)"
         self.numberPrefixLabel.text = self.phoneNumberPrefix
         
-        let size: CGSize = self.phoneNumberPrefix.size(withAttributes: [NSAttributedString.Key.font: self.numberPrefixLabel.font])
+        let size: CGSize = self.phoneNumberPrefix.size(withAttributes: [NSAttributedString.Key.font: self.numberPrefixLabel.font ?? UIFont.preferredFont(forTextStyle: .body)])
         
         self.prefixWidth.constant = size.width + 8.0
         self.numberPrefixLabel.layoutIfNeeded()
