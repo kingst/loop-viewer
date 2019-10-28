@@ -20,10 +20,7 @@ class OverviewViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        
+    func setupUi() {
         guard let user = User.currentUser else {
             print("Not logged in")
             return
@@ -43,10 +40,25 @@ class OverviewViewController: UIViewController {
             return
         }
         
-        self.lastReadingLabel.text = loopDevice.lastUpdate()
+        if loopDevice.hasDeviceStatus {
+            self.lastReadingLabel.text = loopDevice.lastUpdate()
+        } else {
+            self.lastReadingLabel.text = "Connected, waiting for first reading"
+        }
         self.currentGlucoseLabel.text = loopDevice.currentBG()
         self.predictedLabel.text = loopDevice.predictedBG()
         self.carbsOnBoardLabel.text = loopDevice.cob()
         self.insulinOnBoardLabel.text = loopDevice.iob()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        setupUi()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setupUi()
     }
 }

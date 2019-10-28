@@ -5,11 +5,22 @@ struct LoopDevice {
     let predictedValues: [Int]
     let carbsOnBoard: Double
     let insulinOnBoard: Double
+    let hasDeviceStatus: Bool
     
     /**
      By the time we get here we should have a valid loop_device object, crash the app if we don't
      */
     init(_ params: [String: Any]) {
+        if params.count == 0 {
+            self.startDate = Date()
+            self.predictedValues = [0]
+            self.carbsOnBoard = 0.0
+            self.insulinOnBoard = 0.0
+            self.hasDeviceStatus = false
+            return
+        }
+        
+        self.hasDeviceStatus = true
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")

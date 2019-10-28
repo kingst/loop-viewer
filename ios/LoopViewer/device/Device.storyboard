@@ -144,6 +144,7 @@
                         <outlet property="activityIndicator" destination="QbI-rY-Nwo" id="ya9-dQ-6Pu"/>
                         <outlet property="apiSecretLabel" destination="S4P-eI-yB6" id="dkf-IA-uwL"/>
                         <outlet property="errorLabel" destination="JIZ-vf-4d2" id="jI7-lk-dUu"/>
+                        <outlet property="linkButton" destination="zAt-ip-p2U" id="NYT-it-ba5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pSV-dt-pkb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
