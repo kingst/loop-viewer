@@ -19,7 +19,6 @@ class LoopDevice(ndb.Model):
     ctime = ndb.DateTimeProperty(auto_now_add=True)
     api_secret = ndb.TextProperty()
     raw_data = ndb.JsonProperty()
-    # non hashed API secret
 
     
 class User(ndb.Model):

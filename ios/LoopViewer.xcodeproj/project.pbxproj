@@ -35,6 +35,8 @@
 		3B4A93872364CBA8007DE008 /* IdentityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4A93692364CBA8007DE008 /* IdentityViewController.swift */; };
 		3B4A93882364CBA8007DE008 /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4A936A2364CBA8007DE008 /* OverviewViewController.swift */; };
 		3BDCF9DD2366F7F800DF4996 /* LoopDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDCF9DC2366F7F800DF4996 /* LoopDevice.swift */; };
+		3BDCF9DF23672E3100DF4996 /* Device.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BDCF9DE23672E3100DF4996 /* Device.storyboard */; };
+		3BDCF9E12367354F00DF4996 /* SetupLoopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDCF9E02367354F00DF4996 /* SetupLoopViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +69,8 @@
 		3B4A93692364CBA8007DE008 /* IdentityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentityViewController.swift; sourceTree = "<group>"; };
 		3B4A936A2364CBA8007DE008 /* OverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
 		3BDCF9DC2366F7F800DF4996 /* LoopDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopDevice.swift; sourceTree = "<group>"; };
+		3BDCF9DE23672E3100DF4996 /* Device.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Device.storyboard; sourceTree = "<group>"; };
+		3BDCF9E02367354F00DF4996 /* SetupLoopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupLoopViewController.swift; sourceTree = "<group>"; };
 		9075DF1C762922DCB08DAAB6 /* Pods-LoopViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoopViewer.debug.xcconfig"; path = "Target Support Files/Pods-LoopViewer/Pods-LoopViewer.debug.xcconfig"; sourceTree = "<group>"; };
 		BF730157C6729D711A5008CD /* Pods_LoopViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoopViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3FC8C739547D03A0196331C /* Pods-LoopViewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoopViewer.release.xcconfig"; path = "Target Support Files/Pods-LoopViewer/Pods-LoopViewer.release.xcconfig"; sourceTree = "<group>"; };
@@ -105,8 +109,8 @@
 		3B4A93332364C86B007DE008 /* LoopViewer */ = {
 			isa = PBXGroup;
 			children = (
-				3B4A93492364CBA7007DE008 /* account_details */,
-				3B4A93652364CBA8007DE008 /* accounts */,
+				3B4A93492364CBA7007DE008 /* device */,
+				3B4A93652364CBA8007DE008 /* overview */,
 				3B4A93482364CBA7007DE008 /* Api.swift */,
 				3B4A935E2364CBA8007DE008 /* KeyboardViewController.swift */,
 				3B4A935F2364CBA8007DE008 /* models */,
@@ -120,7 +124,7 @@
 			path = LoopViewer;
 			sourceTree = "<group>";
 		};
-		3B4A93492364CBA7007DE008 /* account_details */ = {
+		3B4A93492364CBA7007DE008 /* device */ = {
 			isa = PBXGroup;
 			children = (
 				3B4A934A2364CBA7007DE008 /* AccountDetails.storyboard */,
@@ -129,8 +133,10 @@
 				3B4A934D2364CBA7007DE008 /* SendAmountViewController.swift */,
 				3B4A934E2364CBA7007DE008 /* ConfirmSendViewController.swift */,
 				3B4A934F2364CBA7007DE008 /* AccountDetailsViewController.swift */,
+				3BDCF9DE23672E3100DF4996 /* Device.storyboard */,
+				3BDCF9E02367354F00DF4996 /* SetupLoopViewController.swift */,
 			);
-			path = account_details;
+			path = device;
 			sourceTree = "<group>";
 		};
 		3B4A93512364CBA8007DE008 /* onboarding */ = {
@@ -167,14 +173,14 @@
 			path = models;
 			sourceTree = "<group>";
 		};
-		3B4A93652364CBA8007DE008 /* accounts */ = {
+		3B4A93652364CBA8007DE008 /* overview */ = {
 			isa = PBXGroup;
 			children = (
 				3B4A93682364CBA8007DE008 /* Home.storyboard */,
 				3B4A93692364CBA8007DE008 /* IdentityViewController.swift */,
 				3B4A936A2364CBA8007DE008 /* OverviewViewController.swift */,
 			);
-			path = accounts;
+			path = overview;
 			sourceTree = "<group>";
 		};
 		C86ADE74FA1660012837D86A /* Frameworks */ = {
@@ -254,6 +260,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BDCF9DF23672E3100DF4996 /* Device.storyboard in Resources */,
 				3B4A93412364C86F007DE008 /* LaunchScreen.storyboard in Resources */,
 				3B4A933E2364C86F007DE008 /* Assets.xcassets in Resources */,
 				3B4A937C2364CBA8007DE008 /* creds.json in Resources */,
@@ -314,6 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B4A93772364CBA8007DE008 /* PickCountryViewController.swift in Sources */,
+				3BDCF9E12367354F00DF4996 /* SetupLoopViewController.swift in Sources */,
 				3B4A937A2364CBA8007DE008 /* EnterPhoneNumberViewController.swift in Sources */,
 				3B4A93702364CBA8007DE008 /* ConfirmSendViewController.swift in Sources */,
 				3B4A93782364CBA8007DE008 /* EnterEmailViewController.swift in Sources */,

@@ -1,4 +1,6 @@
 struct LoopDevice {
-    let isConnected = false
+    init(_ params: [String: Any]) {
+
+    }
 }
 

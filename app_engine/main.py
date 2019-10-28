@@ -22,6 +22,13 @@ def _create_uuid():
 
 class ExperimentsTest(webapp2.RequestHandler):
     def get(self):
+        api_secret = self.request.headers.get('api-secret')        
+        if not api_secret is None:
+            device = LoopDevice.get_by_id(api_secret)
+            if not device is None and device.raw_data is None:
+                device.raw_data = {}
+                device.put()
+        
         self.response.headers['Content-Type'] = 'application/json'
         self.response.out.write(json.dumps({'status': 'success'}))
 

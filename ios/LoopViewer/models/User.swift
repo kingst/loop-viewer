@@ -17,6 +17,26 @@ struct User {
         self.apiSecret = params["loop_api_secret"] as! String
         self.name = params["name"] as? String
         self.email = params["email"] as? String
+        let loopDeviceParams = params["loop_device"] as? [String: Any]
+        self.loopDevice = loopDeviceParams.map { LoopDevice($0) }
+    }
+    
+    func refresh(complete: @escaping ((User?, Api.ApiError?) -> Void)) {
+        Api.user { response, error in
+             guard let response = response, error == nil else {
+                complete(nil, error)
+                return
+            }
+            
+            guard let userParams = response["user"] as? [String: Any] else {
+                print("user object not set")
+                complete(nil, Api.defaultError)
+                return
+            }
+            
+            User.currentUser = User(userParams)
+            complete(User.currentUser, nil)
+        }
     }
     
     func formattedPhoneNumber() -> String {

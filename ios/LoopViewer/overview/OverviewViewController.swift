@@ -15,7 +15,9 @@ class OverviewViewController: UIViewController {
     }
             
     @IBAction func devicePress(_ sender: Any) {
-        
+        let storyboard = UIStoryboard(name: "Device", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "setupLoop")
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     override func viewDidLoad() {
@@ -27,12 +29,17 @@ class OverviewViewController: UIViewController {
             return
         }
         
-        guard let loopDevice = user.loopDevice, loopDevice.isConnected else {
+        guard let loopDevice = user.loopDevice else {
             self.lastReadingLabel.text = "No device linked"
             self.currentGlucoseLabel.text = "N/A"
             self.predictedLabel.text = "0"
             self.carbsOnBoardLabel.text = "0"
             self.insulinOnBoardLabel.text = "0"
+            
+            let storyboard = UIStoryboard(name: "Device", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "setupLoop")
+            self.navigationController?.pushViewController(vc, animated: false)
+            
             return
         }
     }
