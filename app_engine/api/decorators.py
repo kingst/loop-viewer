@@ -7,7 +7,6 @@ from api.error import BTError
 #import api.apple_api as apple_api
 
 from models import Session
-from models import AnalyticsEvent
 
 from google.appengine.ext import ndb
 
@@ -24,45 +23,8 @@ def api_call(required_args, auth_required=True):
     """
     def decorator_generator(function):
 
+        
         def decoration(self, *args, **kwargs):
-            event = AnalyticsEvent()
-            event.path = self.request.path
-
-            inner_decoration(self, *args, **kwargs)
-
-            try:
-                event.user = self.request.user.key
-            except:
-                pass
-            
-            # this is for the verify_code call where we try to get the
-            # user even though it isn't an authenticated API call
-            if event.user is None:
-                try:
-                    user_id = json.loads(self.response.body)['user']['user_id']
-                    event.user = ndb.Key(urlsafe=user_id)
-                except:
-                    pass
-            
-            try:
-                event.local_device_id = self.request.device['local_device_id']
-            except:
-                pass
-
-            try:
-                response = json.loads(self.response.body)
-                event.result = response['status']
-                if response['status'] == 'error' and response['error_code'] == 'challenge_needed':
-                    event.challenge_type = response['error_payload']
-            except:
-                pass
-
-            event.status = self.response.status_int
-            event.put()
-
-
-        def inner_decoration(self, *args, **kwargs):
-
             self.response.headers['Content-Type'] = 'application/json'
             # parse the arguments
             try:
@@ -76,16 +38,6 @@ def api_call(required_args, auth_required=True):
                 if 'x-authtoken' in self.request.headers:
                     request_auth_token = self.request.headers['x-authtoken']
                     request_data['auth_token'] = request_auth_token
-
-                if 'x-build' in self.request.headers:
-                    build = self.request.headers['x-build']
-                    request_data['build'] = build
- 
-                if 'x-device' in self.request.headers:
-                    device_encoded = self.request.headers['x-device']
-                    logging.info('device header length = {0}'.format(len(device_encoded)))
-                    device_string = base64.b64decode(device_encoded).decode('UTF-8')
-                    self.request.device = json.loads(device_string)
 
                 if auth_required:
                     required_args.append('auth_token')
