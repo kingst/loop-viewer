@@ -35,8 +35,7 @@ class User(ndb.Model):
     
     def to_dict(self):
         if self.loop_device is None:
-            #code = str(int(os.urandom(4).encode('hex'), 16) % 1000000).zfill(6)
-            code = "asdf"
+            code = str(int(os.urandom(4).encode('hex'), 16) % 1000000).zfill(6)
             code_sha1 = hashlib.sha1(code).hexdigest()
             device = LoopDevice(id=code_sha1)
             device.api_secret = code

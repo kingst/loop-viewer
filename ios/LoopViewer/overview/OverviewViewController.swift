@@ -32,11 +32,6 @@ class OverviewViewController: UIViewController {
             self.predictedLabel.text = "0"
             self.carbsOnBoardLabel.text = "0"
             self.insulinOnBoardLabel.text = "0"
-            
-            let storyboard = UIStoryboard(name: "Device", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "setupLoop")
-            self.navigationController?.pushViewController(vc, animated: false)
-            
             return
         }
         
@@ -55,6 +50,14 @@ class OverviewViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.navigationBar.shadowImage = UIImage()
         setupUi()
+        
+        // only do this once, so it goes here instead of viewDidAppear
+        guard let _ = User.currentUser?.loopDevice else {
+            let storyboard = UIStoryboard(name: "Device", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "setupLoop")
+            self.navigationController?.pushViewController(vc, animated: false)
+            return
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
