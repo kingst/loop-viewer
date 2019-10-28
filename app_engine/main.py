@@ -4,6 +4,7 @@ import os
 import webapp2
 
 from models import DeviceStatus
+from models import LoopDevice
 from models import Treatment
 
 from google.appengine.ext import ndb
@@ -61,6 +62,14 @@ class DeviceStatusHandler(webapp2.RequestHandler):
             #d.put()
             response.append({'_id': uuid})
 
+        most_recent_status = sorted(request_data, key=lambda k: k['created_at'])[-1]
+        api_secret = self.request.headers.get('api-secret')        
+        if not api_secret is None:
+            device = LoopDevice.get_by_id(api_secret)
+            if not device is None:
+                device.raw_data = most_recent_status
+                device.put()
+            
         logging.info(json.dumps(request_data, indent=4))
         self.response.headers['Content-Type'] = 'application/json'
         self.response.out.write(json.dumps(response))
