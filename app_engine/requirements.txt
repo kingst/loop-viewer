@@ -1,8 +1,8 @@
 httplib2==0.10.3
 stripe==1.80.0
 twilio==5.7.0
-requests==2.18.4
+requests==2.20.0
 pyjwt==1.7.1
-ecdsa==0.13
+ecdsa==0.13.3
 enum
 python-dateutil
