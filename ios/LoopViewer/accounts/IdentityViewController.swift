@@ -3,7 +3,7 @@ import UIKit
 class IdentityViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     enum Section: Int {
-        case identity = 0, paymentMethods, promo, logout,  unknown
+        case identity = 0, logout, paymentMethods, promo,  unknown
     }
     
     override func viewDidLoad() {
@@ -17,7 +17,7 @@ class IdentityViewController: UIViewController, UITableViewDelegate, UITableView
         case .paymentMethods:
             return 0
         case .promo:
-            return 1
+            return 0
         case .logout:
             return 1
         default:

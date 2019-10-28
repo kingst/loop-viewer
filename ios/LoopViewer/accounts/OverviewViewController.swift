@@ -28,7 +28,7 @@ class OverviewViewController: UIViewController {
         }
         
         guard let loopDevice = user.loopDevice, loopDevice.isConnected else {
-            self.lastReadingLabel.text = "Not connected"
+            self.lastReadingLabel.text = "No device linked"
             self.currentGlucoseLabel.text = "N/A"
             self.predictedLabel.text = "0"
             self.carbsOnBoardLabel.text = "0"

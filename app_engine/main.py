@@ -21,6 +21,7 @@ def _create_uuid():
 
 class ExperimentsTest(webapp2.RequestHandler):
     def get(self):
+        print(self.request.headers)
         self.response.headers['Content-Type'] = 'application/json'
         self.response.out.write(json.dumps({'status': 'success'}))
 
@@ -28,7 +29,7 @@ class ExperimentsTest(webapp2.RequestHandler):
 class TreatmentHandler(webapp2.RequestHandler):
     def post(self):
         request_data = json.loads(self.request.body)
-        
+        print(self.request.headers)
         response = []
         bulk_put_list = []
         for treatment in request_data:
@@ -38,7 +39,7 @@ class TreatmentHandler(webapp2.RequestHandler):
             bulk_put_list.append(t)
             response.append({'_id': uuid})
 
-        ndb.put_multi(bulk_put_list)
+        #ndb.put_multi(bulk_put_list)
         logging.info(json.dumps(request_data, indent=4))
         self.response.headers['Content-Type'] = 'application/json'
         self.response.out.write(json.dumps(response))
@@ -47,13 +48,13 @@ class TreatmentHandler(webapp2.RequestHandler):
 class DeviceStatusHandler(webapp2.RequestHandler):
     def post(self):
         request_data = json.loads(self.request.body)
-
+        print(self.request.headers)
         response = []
         for status in request_data:
             uuid = _create_uuid()
             d = DeviceStatus(id=uuid)
             d.raw_data = status
-            d.put()
+            #d.put()
             response.append({'_id': uuid})
 
         logging.info(json.dumps(request_data, indent=4))
