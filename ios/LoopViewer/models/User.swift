@@ -39,6 +39,24 @@ struct User {
         }
     }
     
+    func updateApiSecret(apiSecret: String, complete: @escaping ((User?, Api.ApiError?) -> Void)) {
+        Api.setApiSecret(apiSecret) { response, error in
+             guard let response = response, error == nil else {
+                complete(nil, error)
+                return
+            }
+            
+            guard let userParams = response["user"] as? [String: Any] else {
+                print("user object not set")
+                complete(nil, Api.defaultError)
+                return
+            }
+            
+            User.currentUser = User(userParams)
+            complete(User.currentUser, nil)
+        }
+    }
+    
     func formattedPhoneNumber() -> String {
         return User.formatted(e164PhoneNumber: self.e164PhoneNumber)
     }

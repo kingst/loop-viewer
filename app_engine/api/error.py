@@ -33,6 +33,8 @@ CHALLENGE_NEEDED = {'code': 'challenge_needed',
                     'message': 'You must pass a challenge'}
 PROMO_FAILED = {'code': 'promo_failed',
                 'message': 'We were unable to find this promo code'}
+LOOP_DEVICE_NOT_FOUND = {'code': 'loop_device_not_found',
+                         'message': 'We were unable to find this Loop device'}
 
 class BTError(Exception):
     """An error thrown by an API call """

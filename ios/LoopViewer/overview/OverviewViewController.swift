@@ -7,6 +7,8 @@ class OverviewViewController: UIViewController {
     @IBOutlet weak var carbsOnBoardLabel: UILabel!
     @IBOutlet weak var insulinOnBoardLabel: UILabel!
     
+    var refreshTimer: Timer?
+    
     @IBAction func identityPress(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Home", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "identity") as! IdentityViewController
@@ -63,5 +65,22 @@ class OverviewViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setupUi()
+        self.refreshTimer = Timer(timeInterval: 30.0, repeats: true) {_ in
+            User.currentUser?.refresh {_,_ in
+                self.setupUi()
+            }
+        }
+        
+        guard let timer = self.refreshTimer else {
+            print("Could not create timer")
+            return
+        }
+        
+        RunLoop.main.add(timer, forMode: .default)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.refreshTimer?.invalidate()
     }
 }

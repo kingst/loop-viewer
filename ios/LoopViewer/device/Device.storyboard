@@ -151,5 +151,84 @@
             </objects>
             <point key="canvasLocation" x="136.875" y="230.28169014084509"/>
         </scene>
+        <!--Link Existing View Controller-->
+        <scene sceneID="f4c-DU-Fmv">
+            <objects>
+                <viewController storyboardIdentifier="linkExisting" id="b2L-Rz-Khb" customClass="LinkExistingViewController" customModule="Betes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kEh-rs-HbG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Link existing Loop device" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Mpw-2U-NRF">
+                                <rect key="frame" x="20" y="109" width="374" height="25.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="API Secret" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cE6-0s-lnH">
+                                <rect key="frame" x="20" y="150.5" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                            </textField>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;error&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="d8Q-2H-YS8">
+                                <rect key="frame" x="20" y="200.5" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TQz-hv-cw8">
+                                <rect key="frame" x="20" y="229.5" width="374" height="50"/>
+                                <color key="backgroundColor" red="0.3294117647" green="0.38431372549999998" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Jeo-H9-x1b"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="Link">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="linkPress" destination="b2L-Rz-Khb" eventType="touchUpInside" id="Sbd-8o-85a"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="KWs-Us-ST6">
+                                <rect key="frame" x="188.5" y="236" width="37" height="37"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="KWs-Us-ST6" firstAttribute="centerX" secondItem="TQz-hv-cw8" secondAttribute="centerX" id="9sp-yd-NxC"/>
+                            <constraint firstItem="UjV-5a-pFw" firstAttribute="trailing" secondItem="cE6-0s-lnH" secondAttribute="trailing" constant="20" id="BdK-Yh-jtU"/>
+                            <constraint firstItem="Mpw-2U-NRF" firstAttribute="leading" secondItem="UjV-5a-pFw" secondAttribute="leading" constant="20" id="DDQ-D7-zVU"/>
+                            <constraint firstItem="UjV-5a-pFw" firstAttribute="trailing" secondItem="d8Q-2H-YS8" secondAttribute="trailing" constant="20" id="Yxn-JW-nd9"/>
+                            <constraint firstItem="UjV-5a-pFw" firstAttribute="trailing" secondItem="TQz-hv-cw8" secondAttribute="trailing" constant="20" id="dW6-mE-LaH"/>
+                            <constraint firstItem="TQz-hv-cw8" firstAttribute="leading" secondItem="UjV-5a-pFw" secondAttribute="leading" constant="20" id="fOu-Ml-Vyt"/>
+                            <constraint firstItem="cE6-0s-lnH" firstAttribute="leading" secondItem="UjV-5a-pFw" secondAttribute="leading" constant="20" id="fQ7-3K-Ccx"/>
+                            <constraint firstItem="d8Q-2H-YS8" firstAttribute="leading" secondItem="UjV-5a-pFw" secondAttribute="leading" constant="20" id="g5D-6b-fqD"/>
+                            <constraint firstItem="UjV-5a-pFw" firstAttribute="trailing" secondItem="Mpw-2U-NRF" secondAttribute="trailing" constant="20" id="khy-Mh-Dtq"/>
+                            <constraint firstItem="KWs-Us-ST6" firstAttribute="centerY" secondItem="TQz-hv-cw8" secondAttribute="centerY" id="kv3-YN-QOC"/>
+                            <constraint firstItem="TQz-hv-cw8" firstAttribute="top" secondItem="d8Q-2H-YS8" secondAttribute="bottom" constant="8" id="ofx-iV-oEE"/>
+                            <constraint firstItem="Mpw-2U-NRF" firstAttribute="top" secondItem="UjV-5a-pFw" secondAttribute="top" constant="21" id="rqv-R0-5sn"/>
+                            <constraint firstItem="d8Q-2H-YS8" firstAttribute="top" secondItem="cE6-0s-lnH" secondAttribute="bottom" constant="16" id="uIF-Xi-ILR"/>
+                            <constraint firstItem="cE6-0s-lnH" firstAttribute="top" secondItem="Mpw-2U-NRF" secondAttribute="bottom" constant="16" id="wzL-Yw-8r7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UjV-5a-pFw"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="KWs-Us-ST6" id="0KV-XG-xRs"/>
+                        <outlet property="apiSecretField" destination="cE6-0s-lnH" id="V3L-M7-CtO"/>
+                        <outlet property="errorLabel" destination="d8Q-2H-YS8" id="Lxy-W6-ybX"/>
+                        <outlet property="linkButton" destination="TQz-hv-cw8" id="Zbz-bK-Im3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PRA-Gl-G99" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="827.536231884058" y="228.34821428571428"/>
+        </scene>
     </scenes>
 </document>

@@ -1,29 +1,42 @@
 import UIKit
 
-class SetupLoopViewController: UIViewController, LinkExistingProtocol {
+protocol LinkExistingProtocol {
+    func userSavedNewApiSecret()
+}
 
-    @IBOutlet weak var apiSecretLabel: UILabel!
+class LinkExistingViewController: UIViewController {
+    var delegate: LinkExistingProtocol?
+    @IBOutlet weak var apiSecretField: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var linkButton: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        guard let user = User.currentUser else {
-            preconditionFailure("No current user")
-        }
-        
-        apiSecretLabel.text = user.apiSecret
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.apiSecretField.becomeFirstResponder()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.apiSecretField.resignFirstResponder()
     }
     
     @IBAction func linkPress() {
+        guard let apiSecret = self.apiSecretField.text else {
+            print("api secret not set")
+            return
+        }
+        
         let currentTitle = self.linkButton.title(for: .normal) ?? "Link"
         self.linkButton.setTitle("", for: .normal)
         self.linkButton.isEnabled = false
         self.activityIndicator.isHidden = false
         self.errorLabel.isHidden = true
-        User.currentUser?.refresh { newUser, error in
+        User.currentUser?.updateApiSecret(apiSecret: apiSecret) { newUser, error in
             self.linkButton.isEnabled = true
             self.linkButton.setTitle(currentTitle, for: .normal)
             self.activityIndicator.isHidden = true
@@ -38,20 +51,9 @@ class SetupLoopViewController: UIViewController, LinkExistingProtocol {
                 self.errorLabel.isHidden = false
                 self.errorLabel.text = "Loop device not connected yet"
             } else {
-                self.navigationController?.popViewController(animated: true)
+                self.delegate?.userSavedNewApiSecret()
             }
         }
     }
     
-    @IBAction func existingDevicePress() {
-        let storyboard = UIStoryboard(name: "Device", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "linkExisting") as! LinkExistingViewController
-        vc.delegate = self
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    func userSavedNewApiSecret() {
-        self.navigationController?.popViewController(animated: true)
-        self.navigationController?.popViewController(animated: false)
-    }
 }

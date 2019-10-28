@@ -1,3 +1,4 @@
+import hashlib
 import json
 import logging
 import os
@@ -11,6 +12,9 @@ from google.appengine.ext import ndb
 
 import api.sms_helper as sms_helper
 import api.decorators as decorators
+
+from api.error import BTError
+import api.error as error
 
 
 def _create_uuid():
@@ -113,6 +117,14 @@ class CurrentUser(webapp2.RequestHandler):
         if 'email' in self.request.request_data:
             self.request.user.email = self.request.request_data['email']
 
+        if 'api_secret' in self.request.request_data:
+            new_api_secret = self.request.request_data['api_secret']
+            secret_sha1 = hashlib.sha1(new_api_secret).hexdigest()
+            loop_device = LoopDevice.get_by_id(secret_sha1)
+            if loop_device is None:
+                raise BTError(error.LOOP_DEVICE_NOT_FOUND)
+            self.request.user.loop_device = loop_device.key
+            
         self.request.user.put()
 
         return {'user': self.request.user.to_dict()}

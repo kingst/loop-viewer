@@ -37,6 +37,7 @@
 		3BDCF9DD2366F7F800DF4996 /* LoopDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDCF9DC2366F7F800DF4996 /* LoopDevice.swift */; };
 		3BDCF9DF23672E3100DF4996 /* Device.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BDCF9DE23672E3100DF4996 /* Device.storyboard */; };
 		3BDCF9E12367354F00DF4996 /* SetupLoopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDCF9E02367354F00DF4996 /* SetupLoopViewController.swift */; };
+		3BDCF9E32367614A00DF4996 /* LinkExistingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDCF9E22367614900DF4996 /* LinkExistingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 		3BDCF9DC2366F7F800DF4996 /* LoopDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopDevice.swift; sourceTree = "<group>"; };
 		3BDCF9DE23672E3100DF4996 /* Device.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Device.storyboard; sourceTree = "<group>"; };
 		3BDCF9E02367354F00DF4996 /* SetupLoopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupLoopViewController.swift; sourceTree = "<group>"; };
+		3BDCF9E22367614900DF4996 /* LinkExistingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkExistingViewController.swift; sourceTree = "<group>"; };
 		9075DF1C762922DCB08DAAB6 /* Pods-LoopViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoopViewer.debug.xcconfig"; path = "Target Support Files/Pods-LoopViewer/Pods-LoopViewer.debug.xcconfig"; sourceTree = "<group>"; };
 		BF730157C6729D711A5008CD /* Pods_LoopViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoopViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3FC8C739547D03A0196331C /* Pods-LoopViewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoopViewer.release.xcconfig"; path = "Target Support Files/Pods-LoopViewer/Pods-LoopViewer.release.xcconfig"; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				3B4A934F2364CBA7007DE008 /* AccountDetailsViewController.swift */,
 				3BDCF9DE23672E3100DF4996 /* Device.storyboard */,
 				3BDCF9E02367354F00DF4996 /* SetupLoopViewController.swift */,
+				3BDCF9E22367614900DF4996 /* LinkExistingViewController.swift */,
 			);
 			path = device;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				3B4A937F2364CBA8007DE008 /* Storage.swift in Sources */,
 				3B4A936D2364CBA8007DE008 /* ReceiveViewController.swift in Sources */,
 				3B4A93792364CBA8007DE008 /* VerifyCodeViewController.swift in Sources */,
+				3BDCF9E32367614A00DF4996 /* LinkExistingViewController.swift in Sources */,
 				3B4A937E2364CBA8007DE008 /* KeyboardViewController.swift in Sources */,
 				3B4A936F2364CBA8007DE008 /* SendAmountViewController.swift in Sources */,
 				3B4A936E2364CBA8007DE008 /* SendToViewController.swift in Sources */,
