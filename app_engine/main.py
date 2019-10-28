@@ -21,7 +21,6 @@ def _create_uuid():
 
 class ExperimentsTest(webapp2.RequestHandler):
     def get(self):
-        print(self.request.headers)
         self.response.headers['Content-Type'] = 'application/json'
         self.response.out.write(json.dumps({'status': 'success'}))
 
@@ -29,7 +28,6 @@ class ExperimentsTest(webapp2.RequestHandler):
 class TreatmentHandler(webapp2.RequestHandler):
     def post(self):
         request_data = json.loads(self.request.body)
-        print(self.request.headers)
         response = []
         bulk_put_list = []
         for treatment in request_data:
@@ -44,11 +42,17 @@ class TreatmentHandler(webapp2.RequestHandler):
         self.response.headers['Content-Type'] = 'application/json'
         self.response.out.write(json.dumps(response))
 
-
+        
+class DeleteTreatment(webapp2.RequestHandler):
+    def delete(self, treatment_id):
+        # since we're not actually storing anything let's fake it
+        self.response.headers['Content-Type'] = 'application/json'
+        self.response.out.write(json.dumps({'status': 'success'}))
+        
+        
 class DeviceStatusHandler(webapp2.RequestHandler):
     def post(self):
         request_data = json.loads(self.request.body)
-        print(self.request.headers)
         response = []
         for status in request_data:
             uuid = _create_uuid()
@@ -105,6 +109,7 @@ class CurrentUser(webapp2.RequestHandler):
     
 app = webapp2.WSGIApplication(
     [(r'/api/v1/experiments/test', ExperimentsTest),
+     (r'/api/v1/treatments/(.*)', DeleteTreatment),
      (r'/api/v1/treatments', TreatmentHandler),
      (r'/api/v1/devicestatus', DeviceStatusHandler),
      (r'/api/v1/send_verification_code', SendVerificationCode),
