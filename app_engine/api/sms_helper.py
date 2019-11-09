@@ -121,7 +121,7 @@ def _generate_verification_code(phone_data, current_time):
 
 
 def send_login_sms(phone_number):  # pragma: no cover
-    return send_sms(phone_number, "Your Growth Metrics Wallet code is: {short_code}")
+    return send_sms(phone_number, "Your Betes verification code is: {short_code}")
 
 
 @ndb.transactional

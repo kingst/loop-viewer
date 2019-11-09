@@ -17,8 +17,8 @@ struct Api {
     
     // XXX FIXME we should move to a more traditional error handling method
     typealias ApiCompletion = ((_ response: [String: Any]?, _ error: ApiError?) -> Void)
-    //static var baseUrl = "https://loop-viewer.appspot.com"
-    static var baseUrl = "http://10.0.0.114:8080"
+    static var baseUrl = "https://loop-viewer.appspot.com"
+    //static var baseUrl = "http://10.0.0.114:8080"
     static let defaultError = ApiError(response: [:])
     
     static func configuration() -> URLSessionConfiguration {

@@ -482,6 +482,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 0003;
 				DEVELOPMENT_TEAM = L4TQ6C2R74;
 				INFOPLIST_FILE = LoopViewer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -489,10 +490,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.getgrowthmetrics.LoopViewer;
 				PRODUCT_NAME = Betes;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -502,6 +504,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 0003;
 				DEVELOPMENT_TEAM = L4TQ6C2R74;
 				INFOPLIST_FILE = LoopViewer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -509,10 +512,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.getgrowthmetrics.LoopViewer;
 				PRODUCT_NAME = Betes;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
