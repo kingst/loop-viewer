@@ -11,7 +11,7 @@
         <!--Betes-->
         <scene sceneID="qHg-g7-NCI">
             <objects>
-                <viewController storyboardIdentifier="overview" id="klt-BW-R6x" customClass="OverviewViewController" customModule="LoopViewer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="overview" id="klt-BW-R6x" customClass="OverviewViewController" customModule="Betes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TW3-P5-9tp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -155,6 +155,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="oFQ-jE-o88">
                                 <rect key="frame" x="0.0" y="221.5" width="320" height="302.5"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="klt-BW-R6x" id="WSf-ef-N4Q"/>
+                                    <outlet property="delegate" destination="klt-BW-R6x" id="YVU-4k-nKP"/>
+                                </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ldd-pg-50E">
                                 <rect key="frame" x="0.0" y="221.5" width="320" height="1"/>
@@ -209,7 +213,7 @@
         <!--Identity-->
         <scene sceneID="syE-hB-geb">
             <objects>
-                <viewController storyboardIdentifier="identity" id="kFc-Zo-jOI" customClass="IdentityViewController" customModule="LoopViewer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="identity" id="kFc-Zo-jOI" customClass="IdentityViewController" customModule="Betes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KHg-dV-BRp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

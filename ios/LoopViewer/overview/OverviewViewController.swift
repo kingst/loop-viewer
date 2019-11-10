@@ -1,6 +1,6 @@
 import UIKit
 
-class OverviewViewController: UIViewController {
+class OverviewViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var lastReadingLabel: UILabel!
     @IBOutlet weak var currentGlucoseLabel: UILabel!
     @IBOutlet weak var predictedLabel: UILabel!
@@ -82,5 +82,34 @@ class OverviewViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.refreshTimer?.invalidate()
+    }
+    
+    // MARK: TableView data source and delegate functions
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "settings") ?? UITableViewCell(style: .default, reuseIdentifier: "settings")
+        
+        cell.imageView?.image = nil
+        cell.accessoryType = .none
+        cell.textLabel?.text = "No recent events"
+        
+        return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView,
+                   titleForHeaderInSection section: Int) -> String? {
+        return "Bolus and carb events"
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

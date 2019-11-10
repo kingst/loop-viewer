@@ -1,6 +1,6 @@
 import UIKit
 
-class SetupLoopViewController: UIViewController, LinkExistingProtocol {
+class SetupLoopViewController: UIViewController, LinkExistingProtocol, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var apiSecretLabel: UILabel!
     @IBOutlet weak var errorLabel: UILabel!
@@ -9,12 +9,6 @@ class SetupLoopViewController: UIViewController, LinkExistingProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        guard let user = User.currentUser else {
-            preconditionFailure("No current user")
-        }
-        
-        apiSecretLabel.text = user.apiSecret
     }
     
     @IBAction func linkPress() {
@@ -53,5 +47,58 @@ class SetupLoopViewController: UIViewController, LinkExistingProtocol {
     func userSavedNewApiSecret() {
         self.navigationController?.popViewController(animated: true)
         self.navigationController?.popViewController(animated: false)
+    }
+    
+    // MARK: TableView data source protocol
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "settings") ?? UITableViewCell(style: .default, reuseIdentifier: "settings")
+        
+        cell.imageView?.image = nil
+        cell.accessoryType = .none
+        
+        if indexPath.section == 0 {
+            cell.textLabel?.text = "https://loop-viewer.appspot.com"
+        } else {
+            cell.textLabel?.text = User.currentUser?.apiSecret ?? "ERROR"
+        }
+        
+        return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView,
+                   titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return "Site URL"
+        } else {
+            return "API Secret"
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if indexPath.section == 0 {
+            UIPasteboard.general.string = "https://loop-viewer.appspot.com"
+            self.errorLabel.text = "Site URL copied to clipboard"
+        } else {
+            UIPasteboard.general.string = User.currentUser?.apiSecret
+            self.errorLabel.text = "API Secret copied to clipboard"
+        }
+        
+        let textColor = self.errorLabel.textColor
+        self.errorLabel.textColor = UIColor.black
+        self.errorLabel.isHidden = false
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            self.errorLabel.textColor = textColor
+            self.errorLabel.isHidden = true
+        }
     }
 }
