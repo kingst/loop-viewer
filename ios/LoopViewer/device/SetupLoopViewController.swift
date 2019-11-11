@@ -7,8 +7,20 @@ class SetupLoopViewController: UIViewController, LinkExistingProtocol, UITableVi
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var linkButton: UIButton!
     
+    var isViewVisible = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.isViewVisible = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        self.isViewVisible = false
     }
     
     @IBAction func linkPress() {
@@ -97,8 +109,10 @@ class SetupLoopViewController: UIViewController, LinkExistingProtocol, UITableVi
         self.errorLabel.textColor = UIColor.black
         self.errorLabel.isHidden = false
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-            self.errorLabel.textColor = textColor
-            self.errorLabel.isHidden = true
+            if self.isViewVisible {
+                self.errorLabel.textColor = textColor
+                self.errorLabel.isHidden = true
+            }
         }
     }
 }
